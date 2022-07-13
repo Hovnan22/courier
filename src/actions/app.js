@@ -1,8 +1,14 @@
-import { SET_LOGIN } from "./actionType";
+import { SET_LOGIN, ADD_TO_BASKET } from "./actionTypes";
 
-export default LogIn = (LoggedStatus) => {
+export const LogIn = (LoggedStatus) => {
     return {
         type: SET_LOGIN,
         payload: LoggedStatus
+    }
+}
+export const AddToBasket = (item) => {
+    return {
+        type: ADD_TO_BASKET,
+        payload: item
     }
 }

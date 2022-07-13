@@ -1,7 +1,8 @@
-import { SET_LOGIN } from "../actions/actionType"
+import { SET_LOGIN, ADD_TO_BASKET } from "../actions/actionTypes";
 
 const initialState = {
     isLoading: false,
+    basketItems: []
 };
 
 export default (state = initialState, { type, payload }) => {
@@ -12,7 +13,12 @@ export default (state = initialState, { type, payload }) => {
                 isLoading: payload
             }
         }
-
+        case ADD_TO_BASKET: {
+            return {
+                ...state,
+                basketItems: [...state.basketItems, payload]
+            }
+        }
         default: {
             return state;
         }
